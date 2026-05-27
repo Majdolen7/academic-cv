@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<BaseLayout
+  title="About – Majdolen Haidar"
+  description="Academic biography of Majdolen Haidar, MA student in Arabic Studies and Digital Humanities at Freie Universität Berlin. Focused on language, identity, multilingualism, and diaspora."
+>
+  <div class="container">
+    <header class="page-header">
+      <p class="page-header__eyebrow">Biography</p>
+      <h1 class="page-header__title">About</h1>
+      <p class="page-header__lead">
+        Scholar of language, identity, and culture — working at the intersection of
+        Arabic Studies, Digital Humanities, and intercultural research.
+      </p>
+    </header>
+
+    <div class="about__grid">
+      <!-- Sidebar -->
+      <aside class="about__sidebar">
+      <img
+  src={`${base}images/CVfoto.JPG`}
+  alt="Majdolen Haidar"
+  class="CVfoto.JPG"
+  style="width:100%; border-radius:20px;"
+/>
+        <ul class="about__meta" aria-label="Academic details">
+          <li class="about__meta-item">
+            <span class="about__meta-label">Institution</span>
+            <span class="about__meta-value">Freie Universität Berlin</span>
+          </li>
+          <li class="about__meta-item">
+            <span class="about__meta-label">Degree</span>
+            <span class="about__meta-value">MA — Arabic Studies & Digital Humanities</span>
+          </li>
+          <li class="about__meta-item">
+            <span class="about__meta-label">Location</span>
+            <span class="about__meta-value">Berlin, Germany</span>
+          </li>
+          <li class="about__meta-item">
+            <span class="about__meta-label">Research Languages</span>
+            <span class="about__meta-value">Arabic, German, English</span>
+          </li>
+          <li class="about__meta-item">
+            <span class="about__meta-label">Fields</span>
+            <span class="about__meta-value">Arabic Studies · Digital Humanities · Diaspora Research</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main biography -->
+      <article class="about__body">
+        <h2>Academic Background</h2>
+        <p>
+          I am a Master's student in Arabic Studies and Digital Humanities at Freie Universität
+          Berlin, one of Germany's leading research universities. My academic journey is driven by
+          a deep interest in how language functions as a site of identity construction, cultural
+          memory, and social negotiation — particularly for Arabic-speaking communities in diaspora
+          and migration contexts.
+        </p>
+        <p>
+          My interdisciplinary training brings together classical and contemporary Arabic
+          linguistics, discourse analysis, and the computational methods of Digital Humanities.
+          I am particularly interested in how digital tools — from text mining and corpus
+          linguistics to interactive archives and data visualization — can illuminate patterns
+          in language use, translation, and cultural production that conventional close reading
+          cannot easily access.
+        </p>
+
+        <h2>Research Focus</h2>
+        <p>
+          At the core of my scholarly work lies the question of how multilingual individuals
+          and communities maintain, negotiate, and transform their linguistic and cultural
+          identities across borders. Drawing on discourse analysis, sociolinguistics, and
+          postcolonial theory, I examine Arabic media texts, diasporic literature, and
+          translation practices as arenas in which questions of belonging, authenticity,
+          and hybridity are actively contested.
+        </p>
+        <p>
+          My current research engages with the Syrian diaspora experience in Germany — exploring
+          how language choice, code-switching, and narrative construction reflect and shape
+          processes of integration, memory, and collective identity. I approach these questions
+          with both qualitative depth and an openness to digital methodologies, including
+          computational text analysis and digital archive creation.
+        </p>
+
+        <h2>Intercultural Perspective</h2>
+        <p>
+          My own multilingual background — spanning Arabic, German, English, and Turkish —
+          is not merely a biographical detail but a methodological resource. Having navigated
+          multiple linguistic and cultural worlds, I bring a nuanced, embodied understanding
+          of the dynamics I study. This perspective informs my commitment to scholarship that
+          is both rigorous and attentive to the lived experiences of multilingual subjects.
+        </p>
+        <p>
+          Beyond research, I am engaged with the university community as a student assistant
+          and mentor, contributing to both academic administration and the support of peers
+          navigating the demands of higher education in a second or third language.
+        </p>
+
+        <h2>Keywords</h2>
+        <div class="about__keywords">
+          <span class="tag">Language & Identity</span>
+          <span class="tag">Arabic Studies</span>
+          <span class="tag">Digital Humanities</span>
+          <span class="tag">Multilingualism</span>
+          <span class="tag">Syrian Diaspora</span>
+          <span class="tag">Discourse Analysis</span>
+          <span class="tag">Translation Studies</span>
+          <span class="tag">Migration</span>
+          <span class="tag">Cultural Hybridity</span>
+          <span class="tag">Freie Universität Berlin</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</BaseLayout>

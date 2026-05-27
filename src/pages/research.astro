@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const interests = [
+  {
+    number: '01',
+    title: 'Language and Identity',
+    body: 'How do individuals and communities use language to construct, perform, and negotiate their identities? This interest draws on sociolinguistics, discourse analysis, and identity theory to examine Arabic-speaking populations in both homeland and diaspora contexts. Particular attention is paid to the relationship between language choice and feelings of belonging, authenticity, and cultural allegiance.',
+    keywords: ['Sociolinguistics', 'Identity Construction', 'Belonging', 'Code-switching'],
+  },
+  {
+    number: '02',
+    title: 'Syrian Diaspora Studies',
+    body: 'The Syrian diaspora — one of the largest displacement events of the twenty-first century — raises urgent questions about memory, narrative, and community formation across borders. My research examines how Syrian communities in Germany use language, media, and cultural production to sustain collective memory and forge new forms of diasporic identity.',
+    keywords: ['Diaspora', 'Forced Migration', 'Memory Studies', 'Community Formation'],
+  },
+  {
+    number: '03',
+    title: 'Multilingualism',
+    body: 'Multilingualism is both a social phenomenon and a rich site for theoretical investigation. I am interested in the cognitive, social, and political dimensions of multilingual practice — how speakers manage multiple linguistic resources, how institutions respond to linguistic diversity, and how multilingualism intersects with questions of power and prestige.',
+    keywords: ['Bilingualism', 'Code-switching', 'Language Policy', 'Linguistic Repertoire'],
+  },
+  {
+    number: '04',
+    title: 'Arabic Media Discourse',
+    body: 'Arabic-language media — from satellite television to social media platforms — constitutes a complex discursive space in which political, social, and cultural meanings are produced and contested. I apply corpus linguistics and critical discourse analysis to examine how Arabic media texts construct narratives of nation, conflict, and identity.',
+    keywords: ['Critical Discourse Analysis', 'Arabic Media', 'Corpus Linguistics', 'Narrative'],
+  },
+  {
+    number: '05',
+    title: 'Translation Studies',
+    body: 'Translation is never merely a linguistic act — it is a cultural and political one. My interest in translation studies focuses on the Arabic-German translation pair, examining how texts travel between cultural contexts, what is gained and lost in translation, and how translators navigate the competing demands of fidelity and accessibility.',
+    keywords: ['Literary Translation', 'Cultural Transfer', 'Arabic–German', 'Postcolonial Translation'],
+  },
+  {
+    number: '06',
+    title: 'Digital Humanities',
+    body: 'Digital Humanities offers a powerful set of tools and methods for humanistic inquiry — from text mining and network analysis to digital archiving and geospatial visualization. I am interested in applying these methods to questions of language, culture, and identity, and in critically examining the assumptions and limitations built into digital tools.',
+    keywords: ['Text Mining', 'Digital Archive', 'Data Visualization', 'Computational Analysis'],
+  },
+  {
+    number: '07',
+    title: 'Cultural Hybridity',
+    body: 'Drawing on Homi Bhabha\'s concept of the third space and more recent theorizations of cultural mixing, I examine how individuals and communities in intercultural contact zones produce new, hybrid cultural forms. This interest connects to my work on diaspora, translation, and multilingualism as sites of creative cultural negotiation.',
+    keywords: ['Third Space', 'Bhabha', 'Postcolonial Theory', 'Intercultural Contact'],
+  },
+  {
+    number: '08',
+    title: 'Discourse Analysis',
+    body: 'Discourse analysis provides the methodological backbone for much of my research. I employ both micro-level linguistic analysis — examining lexical choice, metaphor, and syntactic structure — and macro-level critical discourse analysis to understand how language use reflects and reproduces social structures, power relations, and ideological formations.',
+    keywords: ['CDA', 'Foucault', 'Language & Power', 'Qualitative Methods'],
+  },
+];
+---
+
+<BaseLayout
+  title="Research Interests – Majdolen Haidar"
+  description="Research interests of Majdolen Haidar: language and identity, Syrian diaspora, multilingualism, Arabic media discourse, translation studies, and Digital Humanities."
+>
+  <div class="container">
+    <header class="page-header">
+      <p class="page-header__eyebrow">Scholarship</p>
+      <h1 class="page-header__title">Research Interests</h1>
+      <p class="page-header__lead">
+        My research spans the fields of Arabic Studies, sociolinguistics, and Digital Humanities,
+        with a unifying focus on the relationships between language, culture, and identity
+        in multilingual and diasporic contexts.
+      </p>
+    </header>
+
+    <div class="research-grid">
+      {interests.map((item) => (
+        <article class="research-card">
+          <p class="research-card__number" aria-hidden="true">{item.number}</p>
+          <h2 class="research-card__title">{item.title}</h2>
+          <p class="research-card__body">{item.body}</p>
+          <div class="research-card__keywords">
+            {item.keywords.map((kw) => (
+              <span class="tag">{kw}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const tags = [
+  'Translation Studies',
+  'Digital Humanities',
+  'Cultural Memory',
+  'Identity',
+  'Arabic–German',
+  'Diaspora',
+  'Text Analysis',
+];
+---
+
+<BaseLayout
+  title="DH Projects – Majdolen Haidar"
+  description="Digital Humanities research by Majdolen Haidar — a project on translation, identity, and cultural memory at the intersection of Arabic Studies and Digital Humanities."
+>
+  <div class="container">
+
+    <header class="page-header">
+      <p class="page-header__eyebrow">Digital Humanities</p>
+      <h1 class="page-header__title">Research Projects</h1>
+      <p class="page-header__lead">
+        Computational approaches to questions of language, memory, and cultural
+        identity — where Digital Humanities methods meet Arabic Studies.
+      </p>
+    </header>
+
+    <div class="featured-project">
+
+      <div class="featured-project__frame">
+
+        <header class="featured-project__header">
+          <div class="featured-project__header-row">
+            <p class="featured-project__label">Featured Project</p>
+            <span class="featured-project__count">01 / 01</span>
+          </div>
+          <div class="featured-project__status-row">
+            <span class="featured-project__status-dot" aria-hidden="true"></span>
+            <span class="featured-project__status-text">Master's Research · In Progress</span>
+          </div>
+        </header>
+
+        <div class="featured-project__title-block">
+          <h2 class="featured-project__title">
+            "From Translating Civilizations<br class="featured-project__title-break" />
+            to Translating the Self"
+          </h2>
+          <div class="featured-project__rule" aria-hidden="true"></div>
+          <p class="featured-project__subtitle">
+            A Digital Humanities Project on Translation, Identity, and Cultural Memory
+          </p>
+        </div>
+
+        <div class="featured-project__body">
+          <p>
+            This project investigates the act of translation as a site of identity negotiation
+            and cultural memory formation — examining how Arabic literary and testimonial texts
+            travel into German, and what these crossings reveal about diaspora experience,
+            belonging, and self-representation. Moving between the grand rhetoric of translating
+            entire cultural civilizations and the intimate, fractured labor of individual
+            translators navigating personal histories, the project traces how translated works
+            shape — and are shaped by — questions of who speaks, for whom, and across which divide.
+          </p>
+          <p>
+            Drawing on Digital Humanities methods including corpus analysis, network visualization
+            of translation flows, and structured annotation of paratextual materials, the project
+            builds a digital layer over a fundamentally humanistic inquiry: what does it mean to
+            translate a self across languages, cultures, and the experience of displacement?
+          </p>
+        </div>
+
+        <footer class="featured-project__footer">
+          <div class="featured-project__tags">
+            {tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </footer>
+
+      </div>
+
+      <div class="featured-project__aside">
+        <div class="featured-project__aside-item">
+          <p class="featured-project__aside-label">Discipline</p>
+          <p class="featured-project__aside-value">Digital Humanities<br />Arabic Studies</p>
+        </div>
+        <div class="featured-project__aside-item">
+          <p class="featured-project__aside-label">Methods</p>
+          <p class="featured-project__aside-value">Corpus Analysis<br />Network Visualization<br />Digital Archiving</p>
+        </div>
+        <div class="featured-project__aside-item">
+          <p class="featured-project__aside-label">Languages</p>
+          <p class="featured-project__aside-value">Arabic · German<br />English</p>
+        </div>
+        <div class="featured-project__aside-item">
+          <p class="featured-project__aside-label">Institution</p>
+          <p class="featured-project__aside-value">Freie Universität<br />Berlin</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</BaseLayout>

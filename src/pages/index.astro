@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const researchAreas = [
+  'Multilingualism',
+  'Diaspora',
+  'Discourse',
+  'Memory',
+  'Media',
+  'Digital Humanities',
+  'AI & Language',
+];
+---
+
+<BaseLayout
+  title="Majdolen Haidar – MA Student in Arabic Studies & Digital Humanities"
+  description="Academic website of Majdolen Haidar, MA student in Arabic Studies and Digital Humanities at Freie Universität Berlin. Research in language, identity, diaspora, and multilingualism."
+>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__content">
+          <p class="hero__meta">
+            <span class="hero__meta-text">Academic Portfolio</span>
+            <span class="hero__meta-sep" aria-hidden="true">·</span>
+            <span class="hero__meta-text">Freie Universität Berlin</span>
+          </p>
+
+          <h1 class="hero__name">
+            <span class="hero__name-line">Majdolen</span>
+            <span class="hero__name-line">Haidar</span>
+          </h1>
+
+          <div class="hero__rule" aria-hidden="true"></div>
+
+          <p class="hero__subtitle">
+            MA Student in Arabic Studies<br />& Digital Humanities
+          </p>
+
+          <p class="hero__description">
+            Researching language as a space of identity and cultural
+            transformation — bridging Arabic Studies with Digital Humanities
+            to explore multilingualism, diaspora, and memory.
+          </p>
+
+          <div class="hero__actions">
+            <a href={`${base}about`} class="btn btn--primary">About Me</a>
+            <a href={`${base}research`} class="btn btn--outline">Research</a>
+            <a href={`${base}projects`} class="btn btn--ghost">DH Projects →</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <figure class="hero__figure">
+            <img
+              src={`${base}images/homepage.jpg`}
+              alt="Portrait of Majdolen Haidar"
+              class="hero__portrait-img"
+              width="360"
+              height="480"
+            />
+            <figcaption class="hero__portrait-caption">Freie Universität Berlin</figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH THESIS STATEMENT ============ -->
+  <section class="thesis" aria-label="Research statement">
+    <div class="container">
+      <div class="thesis__inner">
+        <blockquote class="thesis__quote">
+          Language as a space of identity, memory,<br />
+          media, and cultural transformation.
+        </blockquote>
+        <p class="thesis__attribution">Research Focus · Arabic Studies &amp; Digital Humanities</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH AREAS STRIP ============ -->
+  <div class="research-areas" aria-label="Research areas">
+    <div class="container">
+      <ul class="research-areas__list" role="list">
+        {researchAreas.map((area) => (
+          <li class="research-areas__item">{area}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ ACADEMIC HIGHLIGHTS ============ -->
+  <section class="highlights">
+    <div class="container">
+      <p class="highlights__label">Fields of Study</p>
+      <div class="highlights__grid">
+
+        <div class="highlight-item">
+          <p class="highlight-item__number">01</p>
+          <h3 class="highlight-item__title">Arabic Studies</h3>
+          <p class="highlight-item__text">
+            Deep engagement with Arabic language, literature, and media
+            discourse within a comparative and intercultural framework.
+          </p>
+        </div>
+
+        <div class="highlight-item">
+          <p class="highlight-item__number">02</p>
+          <h3 class="highlight-item__title">Digital Humanities</h3>
+          <p class="highlight-item__text">
+            Applying computational methods, digital archives, and data
+            visualization to questions of language, culture, and identity.
+          </p>
+        </div>
+
+        <div class="highlight-item">
+          <p class="highlight-item__number">03</p>
+          <h3 class="highlight-item__title">Multilingualism</h3>
+          <p class="highlight-item__text">
+            Working across Arabic, German, English, and Turkish to examine
+            how multilingual speakers navigate identity across cultural boundaries.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPLORE CARDS ============ -->
+  <section class="nav-cards">
+    <div class="container">
+      <header class="nav-cards__header">
+        <h2 class="nav-cards__heading">Explore My Work</h2>
+        <p class="nav-cards__subline">Research, projects, and academic background</p>
+      </header>
+
+      <div class="nav-cards__grid">
+
+        <a href={`${base}research`} class="nav-card">
+          <p class="nav-card__eyebrow">Scholarship</p>
+          <h3 class="nav-card__title">Research Interests</h3>
+          <p class="nav-card__description">
+            From Syrian diaspora studies and Arabic media discourse to
+            translation theory and cultural hybridity.
+          </p>
+          <span class="nav-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href={`${base}experience`} class="nav-card">
+          <p class="nav-card__eyebrow">Background</p>
+          <h3 class="nav-card__title">Academic Experience</h3>
+          <p class="nav-card__description">
+            Student assistant roles, mentoring, cultural management, and
+            multilingual communication at Freie Universität Berlin.
+          </p>
+          <span class="nav-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href={`${base}projects`} class="nav-card">
+          <p class="nav-card__eyebrow">Digital Humanities</p>
+          <h3 class="nav-card__title">DH Projects</h3>
+          <p class="nav-card__description">
+            A featured research project on translation, identity, and cultural
+            memory — at the intersection of computation and Arabic Studies.
+          </p>
+          <span class="nav-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href={`${base}languages`} class="nav-card">
+          <p class="nav-card__eyebrow">Competencies</p>
+          <h3 class="nav-card__title">Languages</h3>
+          <p class="nav-card__description">
+            Arabic (native), German (C1), English (B2), and Turkish (A1–A2) —
+            multilingualism as both scholarly subject and lived practice.
+          </p>
+          <span class="nav-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href={`${base}about`} class="nav-card">
+          <p class="nav-card__eyebrow">Biography</p>
+          <h3 class="nav-card__title">About</h3>
+          <p class="nav-card__description">
+            An academic biography tracing my path through Arabic Studies,
+            intercultural communication, and Digital Humanities.
+          </p>
+          <span class="nav-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href={`${base}contact`} class="nav-card">
+          <p class="nav-card__eyebrow">Connect</p>
+          <h3 class="nav-card__title">Contact</h3>
+          <p class="nav-card__description">
+            Reach out via email, GitHub, LinkedIn, or ORCID for academic
+            collaboration, questions, or correspondence.
+          </p>
+          <span class="nav-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

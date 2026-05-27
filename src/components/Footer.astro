@@ -1,0 +1,38 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const footerLinks = [
+  { label: 'About',    href: `${base}about` },
+  { label: 'Research', href: `${base}research` },
+  { label: 'Projects', href: `${base}projects` },
+  { label: 'Contact',  href: `${base}contact` },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__brand">Majdolen Haidar</p>
+        <p class="footer__tagline">MA Student · Arabic Studies & Digital Humanities</p>
+      </div>
+      <ul class="footer__links" role="list">
+        {footerLinks.map(({ label, href }) => (
+          <li>
+            <a href={href} class="footer__link">{label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copyright">
+        &copy; {currentYear} Majdolen Haidar. All rights reserved.
+      </span>
+      <span class="footer__affiliation">
+        Freie Universität Berlin
+      </span>
+    </div>
+  </div>
+</footer>

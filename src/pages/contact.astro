@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contactLinks = [
+  {
+    platform: 'Email',
+    value: 'majdolen.haidar@fu-berlin.de',
+    href: 'mailto:majdolen.haidar@fu-berlin.de',
+    icon: '✉',
+    description: 'For academic correspondence and collaboration inquiries',
+  },
+  {
+    platform: 'GitHub',
+    value: 'github.com/majdolenhaidar',
+    href: 'https://github.com/majdolenhaidar',
+    icon: '⌥',
+    description: 'Digital Humanities projects and code repositories',
+  },
+  {
+    platform: 'LinkedIn',
+    value: 'linkedin.com/in/majdolenhaidar',
+    href: 'https://linkedin.com/in/majdolenhaidar',
+    icon: '◈',
+    description: 'Professional network and academic background',
+  },
+  {
+    platform: 'ORCID',
+    value: '0000-0000-0000-0000',
+    href: 'https://orcid.org/0000-0000-0000-0000',
+    icon: '◎',
+    description: 'Persistent scholarly identifier for publications and research',
+  },
+];
+---
+
+<BaseLayout
+  title="Contact – Majdolen Haidar"
+  description="Contact Majdolen Haidar — MA student in Arabic Studies and Digital Humanities at Freie Universität Berlin. Email, GitHub, LinkedIn, and ORCID."
+>
+  <div class="container">
+    <header class="page-header">
+      <p class="page-header__eyebrow">Connect</p>
+      <h1 class="page-header__title">Contact</h1>
+      <p class="page-header__lead">
+        I welcome correspondence from scholars, students, and organizations
+        with shared interests in Arabic Studies, Digital Humanities,
+        and intercultural research.
+      </p>
+    </header>
+
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <p>
+          Whether you are interested in discussing research, exploring potential collaboration,
+          or simply reaching out about shared academic interests — please do not hesitate
+          to get in touch.
+        </p>
+        <p>
+          I am particularly open to discussions around Digital Humanities projects,
+          Arabic language and culture research, diaspora studies, and multilingualism.
+          I respond to all academic correspondence in Arabic, German, or English.
+        </p>
+        <p>
+          For formal academic correspondence, email is preferred. For Digital Humanities
+          collaborations and code-related inquiries, GitHub is the most efficient channel.
+        </p>
+        <p class="contact-note">
+          <em>Please note that contact details above are placeholders
+          and should be updated before publishing.</em>
+        </p>
+      </div>
+
+      <div>
+        <div class="contact-links" role="list">
+          {contactLinks.map((link) => (
+            <a href={link.href} class="contact-link" role="listitem"
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            >
+              <span class="contact-link__icon" aria-hidden="true">{link.icon}</span>
+              <div class="contact-link__body">
+                <span class="contact-link__platform">{link.platform}</span>
+                <span class="contact-link__value">{link.value}</span>
+              </div>
+              <span class="contact-link__arrow" aria-hidden="true">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

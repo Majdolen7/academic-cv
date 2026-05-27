@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const languages = [
+  {
+    name: 'Arabic',
+    level: 'Native',
+    cefrEquivalent: 'C2',
+    barWidth: '100%',
+    description:
+      'Mother tongue and primary language of academic and personal life. Proficient in both Modern Standard Arabic (MSA) and Syrian Arabic dialect. Experience with classical Arabic texts and contemporary media discourse.',
+  },
+  {
+    name: 'German',
+    level: 'C1 — Advanced',
+    cefrEquivalent: 'C1',
+    barWidth: '80%',
+    description:
+      'Advanced proficiency enabling full participation in German-language academic discourse, including reading scholarly literature, writing academic texts, and conducting research at a German university.',
+  },
+  {
+    name: 'English',
+    level: 'B2 — Upper Intermediate',
+    cefrEquivalent: 'B2',
+    barWidth: '65%',
+    description:
+      'Strong reading and writing skills in English for academic and professional purposes. Able to engage with English-language scholarship, write research summaries, and communicate with international colleagues.',
+  },
+  {
+    name: 'Turkish',
+    level: 'A1–A2 — Beginner',
+    cefrEquivalent: 'A1–A2',
+    barWidth: '20%',
+    description:
+      'Foundational knowledge of Turkish, currently being developed. Interest in Turkish reflects broader scholarly engagement with multilingualism in the Arab–Turkish cultural sphere and diasporic communities.',
+  },
+];
+---
+
+<BaseLayout
+  title="Languages – Majdolen Haidar"
+  description="Language skills of Majdolen Haidar: Arabic (native), German (C1), English (B2), Turkish (A1–A2). Multilingualism as scholarship and lived practice."
+>
+  <div class="container container--narrow">
+    <header class="page-header">
+      <p class="page-header__eyebrow">Competencies</p>
+      <h1 class="page-header__title">Languages</h1>
+      <p class="page-header__lead">
+        Multilingualism is both a scholarly subject and a lived practice in my academic
+        and personal life. I work across Arabic, German, and English on a daily basis,
+        with developing competence in Turkish.
+      </p>
+    </header>
+
+    <div class="languages-list" role="list">
+      {languages.map((lang) => (
+        <div class="language-item" role="listitem">
+          <h2 class="language-item__name">{lang.name}</h2>
+          <div class="language-item__bar-wrap" role="progressbar"
+            aria-label={`${lang.name} proficiency`}
+            aria-valuemin={0} aria-valuemax={100}
+            aria-valuenow={parseInt(lang.barWidth)}>
+            <div class="language-item__bar" style={`width: ${lang.barWidth}`}></div>
+          </div>
+          <span class="language-item__level">{lang.cefrEquivalent}</span>
+          <p class="language-item__description">{lang.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="language-note">
+      <p>
+        Proficiency levels follow the Common European Framework of Reference for Languages (CEFR).
+        Language is central to my research methodology — working in and across Arabic, German,
+        and English allows me to engage with primary sources and scholarship without mediation,
+        and to remain attentive to the nuances that translation inevitably transforms.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

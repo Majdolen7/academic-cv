@@ -1,0 +1,45 @@
+---
+// BaseLayout – wraps every page with Navbar, Footer, and global styles
+import SEO from '../components/SEO.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import '../styles/nav.css';
+import '../styles/footer.css';
+import '../styles/pages.css';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+  image?: string;
+}
+
+const { title, description, canonicalURL, image } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      canonicalURL={canonicalURL}
+      image={image}
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="sitemap" href={`${base}sitemap-index.xml`} />
+  </head>
+  <body>
+    <Navbar />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

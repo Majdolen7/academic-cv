@@ -1,0 +1,42 @@
+---
+// SEO component – inject into <head> of every layout
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalURL = Astro.url.href,
+  image = '/og-default.png',
+} = Astro.props;
+
+const fullTitle = title.includes('Majdolen Haidar')
+  ? title
+  : `${title} | Majdolen Haidar`;
+---
+
+<title>{fullTitle}</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site).href} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.site).href} />
+
+<!-- Fonts via system stack – no external requests needed -->
+<meta name="theme-color" content="#fafafa" />

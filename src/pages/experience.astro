@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sections = [
+  {
+    label: 'University Roles',
+    title: 'Freie Universität Berlin',
+    items: [
+      {
+        date: '2023 – Present',
+        role: 'Student Assistant',
+        org: 'Freie Universität Berlin',
+        description:
+          'Supporting academic staff and research projects within the Department of Arabic Studies. Responsibilities include research assistance, literature review, translation support (Arabic–German–English), document preparation, and coordination of departmental activities. Contributing to an academic environment with a focus on precision, reliability, and multilingual communication.',
+      },
+      {
+        date: '2023 – Present',
+        role: 'Student Mentor',
+        org: 'Freie Universität Berlin',
+        description:
+          'Mentoring incoming students — particularly those from multilingual and international backgrounds — through the academic and administrative challenges of university study. Providing guidance on study skills, academic writing conventions, and navigation of university systems. Facilitating peer support networks and contributing to the university\'s commitment to inclusive, supportive education.',
+      },
+    ],
+  },
+  {
+    label: 'Cultural Sector',
+    title: 'Cultural Management',
+    items: [
+      {
+        date: '2022 – 2023',
+        role: 'Cultural Events Coordinator',
+        org: 'Cultural Organization, Berlin',
+        description:
+          'Planned, coordinated, and executed cultural events with a focus on Arabic and Middle Eastern arts and culture. Responsibilities included stakeholder communication in Arabic, German, and English; logistical coordination; audience development; and content curation. Developed strong competencies in intercultural communication and project management within the cultural sector.',
+      },
+      {
+        date: '2021 – 2022',
+        role: 'Program Assistant',
+        org: 'Intercultural Cultural Institution, Berlin',
+        description:
+          'Assisted in the development and delivery of intercultural education programs. Supported communication between Arabic-speaking communities and German-speaking institutional partners. Contributed to programming that addressed themes of migration, identity, and cultural dialogue.',
+      },
+    ],
+  },
+  {
+    label: 'Academic Administration',
+    title: 'Administrative & Library Experience',
+    items: [
+      {
+        date: '2022',
+        role: 'Library and Archive Assistant',
+        org: 'University Library, Berlin',
+        description:
+          'Assisted in the cataloguing, organization, and digitization of Arabic-language holdings. Developed experience with library information systems and archival methodology. Contributed to a project digitizing historical Arabic periodicals — an experience that directly informed my subsequent interest in digital archiving and Digital Humanities methods.',
+      },
+      {
+        date: '2021',
+        role: 'Administrative Assistant',
+        org: 'Academic Institution, Berlin',
+        description:
+          'Provided administrative support including document management, scheduling, correspondence in multiple languages, and coordination of academic events. Developed strong organizational skills and an understanding of institutional processes within higher education.',
+      },
+    ],
+  },
+  {
+    label: 'Communication',
+    title: 'Multilingual Communication',
+    items: [
+      {
+        date: 'Ongoing',
+        role: 'Interpreter & Translator (Freelance)',
+        org: 'Various Clients, Berlin',
+        description:
+          'Providing informal interpretation and translation services between Arabic, German, and English for community members, institutions, and organizations. Areas include social services, legal contexts (non-certified), community mediation, and academic texts. This work underscores my commitment to language access and cross-cultural understanding.',
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Academic Experience – Majdolen Haidar"
+  description="Academic and professional experience of Majdolen Haidar: student assistant, mentor, cultural management, library work, and multilingual communication at Freie Universität Berlin."
+>
+  <div class="container">
+    <header class="page-header">
+      <p class="page-header__eyebrow">Background</p>
+      <h1 class="page-header__title">Academic Experience</h1>
+      <p class="page-header__lead">
+        A record of academic, cultural, and administrative experience — grounded
+        in multilingual practice and a commitment to intercultural engagement.
+      </p>
+    </header>
+
+    {sections.map((section) => (
+      <section class="experience-section">
+        <div class="experience-section__header">
+          <p class="experience-section__label">{section.label}</p>
+          <h2 class="experience-section__title">{section.title}</h2>
+        </div>
+        <div class="experience-list">
+          {section.items.map((item) => (
+            <div class="experience-item">
+              <span class="experience-item__date">{item.date}</span>
+              <div class="experience-item__content">
+                <h3 class="experience-item__role">{item.role}</h3>
+                <p class="experience-item__org">{item.org}</p>
+                <p class="experience-item__description">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>
