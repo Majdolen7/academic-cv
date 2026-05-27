@@ -1,8 +1,6 @@
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from 'astro/config'
 
 export default defineConfig({
   site: 'https://majdolen7.github.io',
-  base: '/academic-cv',
-  integrations: [sitemap()],
-});
+  base: '/academic-cv'
+})
